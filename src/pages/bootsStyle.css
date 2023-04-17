@@ -1,0 +1,46 @@
+.boots {
+    height: 100vh;
+    width: 100vw;
+}
+
+.boots form {
+    margin-top: 5rem;
+    margin-inline: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column ;
+    padding: 1rem;
+}
+
+.boots form input {
+    padding: .6rem ;
+    width: 250px;
+  
+    border: none;
+    background-color:#fff;
+    border-radius: 2rem;
+
+}
+.boots form select {
+    width: 250px;
+    padding: .4rem 1rem;
+    margin: .7rem 0;
+    border: none;
+    border-radius: 2rem;
+}
+
+.boots form button {
+    width: 200px;
+    margin-top: 2rem;
+    padding: .7rem 1rem;
+    color: aliceblue;
+    background-color: #333;
+    border: none;
+    border-radius: 2rem;
+    position: relative;
+    transition-duration: .3s;
+}
+
+.boots form button:hover {
+    background-color: #525151;
+}
