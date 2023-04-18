@@ -4,6 +4,10 @@ nav {
     height: 100vh;
     padding: 1rem;
     width: 120px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
 }
 
 nav ul {
