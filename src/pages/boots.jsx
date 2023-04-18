@@ -35,6 +35,7 @@ function Boots() {
     
     return (
         <div className="boots">
+            <h1>Add Boat</h1>
             <form onSubmit={handleSubmit}>
     
         <input
@@ -83,7 +84,7 @@ function Boots() {
         <option value="Pappe">Pappe</option>
         <option value="Seelen">Seelen</option>
       </select>
-        <button type="submit" onClick={handleSubmit}>Add Boot</button>
+        <button type="submit" onClick={handleSubmit}>Add Boat</button>
       </form>
         </div>
     );
