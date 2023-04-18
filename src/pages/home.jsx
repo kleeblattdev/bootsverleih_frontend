@@ -9,6 +9,8 @@ function Home() {
 
     const [data, setData] = useState([]);
 
+    const [reservation, setReservation] = useState([]);
+
     useEffect(() => {
       axios
         .get(`${URL}boats`)
@@ -18,6 +20,12 @@ function Home() {
         .catch((error) => {
           console.log(error);
         });
+
+        axios.get(`${URL}reservation`)
+        .then((response) => {
+            setReservation(response.data);
+        })
+
     }, []);
 
     return (
@@ -26,11 +34,11 @@ function Home() {
             <div className="infoContainer">
                 <div className="infoBox">
                     <p>Aktuelle Reservierungen</p>
-                    <p>10</p>
+                    <p>{reservation.length}</p>
                 </div>
                 <div className="infoBox">
                     <p>Verfügbare Boote</p>
-                    <p>8</p>
+                    <p>{data.length - reservation.length}</p>
                 </div>
                 <div className="infoBox">
                     <p>Gesamtanzahl Boote</p>

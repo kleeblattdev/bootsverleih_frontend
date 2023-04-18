@@ -5,20 +5,28 @@ const URL = "http://localhost:3000/api/v1/";
 function Reservation() {
 	const URL = "http://localhost:3000/api/v1/";
 
-    const [resButton, setResButton] = useState(false)
-
 	const [data, setData] = useState([]);
 
 	const [filtered, setFiltered] = useState({});
 
     const [reservation, setReservation] = useState([]);
 
+    const handelDelete = (boatId)=> {
+        console.log(boatId);
+        axios.delete(`${URL}reservation` ,{ data :{id: boatId}})
+    }
+
+    const handelDeleteBoate = (boatId)=> {
+        console.log(boatId);
+        axios.delete(`${URL}boats`, { data :{id: boatId}})
+    }
+
 	const handelreservationSingle = (boatId) => {
 		console.log(boatId);
 		const filteredItem = data.find((item) => boatId === item._id);
 
-		setFiltered(filteredItem);
         console.log(filteredItem);
+		setFiltered(filteredItem);
 
         axios.post(`${URL}reservation`, filteredItem)
               .then((response) => {
@@ -46,7 +54,7 @@ function Reservation() {
         .catch((error) => {
             console.log(error);
         })
-	}, []);
+	}, [reservation]);
 
 	
 
@@ -56,7 +64,8 @@ function Reservation() {
             <div className="reserviert">
                 <h1>reserviert</h1>
                 {reservation && reservation.map((reservation,i) => <ul key={i}>
-                <li>boot nummer{reservation.bootnr}</li>
+                <li>boot nummer : {reservation.bootnr}</li>
+                <button onClick={()=>handelDelete(reservation._id)}>🗑️</button>
                 </ul>)}
             </div>
             <div className="reservieren">
@@ -66,19 +75,21 @@ function Reservation() {
     
 					return (
 						<ul key={boate._id}>
-							<li>boot nummer{boate.bootnr}</li>
-							<li>baujahr:{boate.baujahr}</li>
-							<li>bootart:{boate.bootart}</li>
-							<li>material:{boate.material}</li>
-							<li>seriennummer:{boate.seriennummer}</li>
+							<li>boot nummer : {boate.bootnr}</li>
+							<li>baujahr : {boate.baujahr}</li>
+							<li>bootart : {boate.bootart}</li>
+							<li>material : {boate.material}</li>
+							<li>seriennummer : {boate.seriennummer}</li>
 			
                             <p >
                             {reservation.find((item) => item.bootnr === boate.bootnr) ? <li>reserviert</li> : <button onClick={() => {
 									handelreservationSingle(boate._id);
-								}}>reservieren</button>}
+								}}>reservieren</button>
+                                }
                             </p>
-
-                            
+                            <button onClick={()=>handelDeleteBoate(boate._id)}>
+                                🗑️
+                            </button>
 						</ul>
 					);
 				})}
