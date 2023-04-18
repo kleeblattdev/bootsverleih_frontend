@@ -71,17 +71,14 @@ function Reservation() {
 							<li>bootart:{boate.bootart}</li>
 							<li>material:{boate.material}</li>
 							<li>seriennummer:{boate.seriennummer}</li>
-							<li>status:</li>
-                            <button disabled={resButton}>
-                            {reservation.find((item) => item.bootnr === boate.bootnr) ? 'reserviert' : "reservieren"}
-                            </button>
-							<button
-								onClick={() => {
+			
+                            <p >
+                            {reservation.find((item) => item.bootnr === boate.bootnr) ? <li>reserviert</li> : <button onClick={() => {
 									handelreservationSingle(boate._id);
-								}}
-							>{}
-								reservieren
-							</button>
+								}}>reservieren</button>}
+                            </p>
+
+                            
 						</ul>
 					);
 				})}
