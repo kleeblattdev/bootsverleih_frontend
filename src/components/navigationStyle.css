@@ -2,12 +2,19 @@ nav {
     display: flex;
     background-color: #333;
     height: 100vh;
-    padding: 1rem;
-    width: 120px;
+    padding: 1.3rem;
+    width: 100px;
     position: sticky;
     top: 0;
     left: 0;
     
+}
+
+nav img {
+    width: 60px;
+    background-color: aliceblue;
+    padding: .4rem;
+    border-radius: 50%;
 }
 
 nav ul {
