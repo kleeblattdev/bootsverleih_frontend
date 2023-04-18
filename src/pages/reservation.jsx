@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+import './ReservationStyle.css'
 import axios from "axios";
 const URL = "http://localhost:3000/api/v1/";
 
@@ -82,7 +84,8 @@ function Reservation() {
 							<li>seriennummer : {boate.seriennummer}</li>
 			
                             <p >
-                            {reservation.find((item) => item.bootnr === boate.bootnr) ? <li>reserviert</li> : <button onClick={() => {
+                            {reservation.find((item) => item.bootnr === boate.bootnr) ? <li className="schonReserviert">reserviert</li> : <button className="reser"
+                            onClick={() => {
 									handelreservationSingle(boate._id);
 								}}>reservieren</button>
                                 }

@@ -1,0 +1,32 @@
+.reservation {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.reservation ul {
+    list-style-type: none;
+    border-bottom: 1px solid #333;
+    padding: 1rem ;
+    background-color: rgb(222, 231, 251);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.reservation ul .reser {
+    background-color: rgb(85, 252, 51) !important;
+}
+
+.reservation ul .schonReserviert {
+    background-color: rgb(253, 127, 127);
+}
+
+.reservation ul button {
+    background-color: #333;
+    color: aliceblue;
+    padding: .6rem;
+    border-radius: 1rem;
+    border: none;
+    margin: .5rem 0;
+}
