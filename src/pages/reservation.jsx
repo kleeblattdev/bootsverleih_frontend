@@ -20,7 +20,7 @@ function Reservation() {
 		setFiltered(filteredItem);
         console.log(filteredItem);
 
-        axios.post(`${URL}reservation`, filtered)
+        axios.post(`${URL}reservation`, filteredItem)
               .then((response) => {
                 console.log(response.data);
               })
