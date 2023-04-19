@@ -15,18 +15,37 @@
 }
 
 .reservation ul .reser {
-    background-color: rgb(85, 252, 51) !important;
+    background-color: rgb(38, 213, 3) !important;
+    transition-duration: .4s;
+}
+
+.reservation ul .reser:hover {
+    transform: scale(.9);
 }
 
 .reservation ul .schonReserviert {
     background-color: rgb(253, 127, 127);
+    padding: .3rem .2rem;
 }
 
 .reservation ul button {
     background-color: #333;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     padding: .6rem;
     border-radius: 1rem;
     border: none;
     margin: .5rem 0;
+}
+
+.reservation .deleteButton {
+    background-color: rgb(255, 112, 112);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition-duration: .4s;
+
+}
+
+.reservation .deleteButton:hover {
+    transform: scale(.9);
 }

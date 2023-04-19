@@ -90,8 +90,8 @@ function Reservation() {
 								}}>reservieren</button>
                                 }
                             </p>
-                            <button onClick={()=>handelDeleteBoate(boate._id)}>
-                                🗑️
+                            <button className="deleteButton" onClick={()=>handelDeleteBoate(boate._id)}>
+                                DEL
                             </button>
 						</ul>
 					);
