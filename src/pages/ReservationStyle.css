@@ -12,6 +12,11 @@
     background-color: rgb(222, 231, 251);
     margin-bottom: 1rem;
     border-radius: 1rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .reservation ul .reser {
@@ -48,4 +53,10 @@
 
 .reservation .deleteButton:hover {
     transform: scale(.9);
+}
+
+.reservieren div , .reserviert div{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
 }

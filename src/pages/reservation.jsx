@@ -65,13 +65,16 @@ function Reservation() {
 
             <div className="reserviert">
                 <h1>reserviert</h1>
+                <div>
                 {reservation && reservation.map((reservation,i) => <ul key={i}>
                 <li>boot nummer : {reservation.bootnr}</li>
                 <button onClick={()=>handelDelete(reservation._id)}>🗑️</button>
                 </ul>)}
+                </div>
             </div>
             <div className="reservieren">
                 <h1>reservieren</h1>
+                <div>
                 {data &&
 				data.map((boate) => {
     
@@ -95,7 +98,9 @@ function Reservation() {
                             </button>
 						</ul>
 					);
-				})}
+			
+                })}
+                  </div>
             </div>
 			
 		</div>
